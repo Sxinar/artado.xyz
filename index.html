@@ -3,45 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artado manifesto</title>
+    <title>Artado</title>
     <link rel="icon" href="/assest/img/favicon/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/assest/css/styles.css">
-
 </head>
 <body>
     <header>
         <nav>
-            <button id="menuButton" class="menu-button">☰</button>
-        </nav>
+            <button id="menuButton" class="menu-button">☰</button>        </nav>
     </header>
-    
+
     <div id="sideMenu" class="side-menu">
-        <a href="#" class="close-btn" id="closeButton">&times;</a>
+        <a href="javascript:void(0)" id="closeButton" class="close-btn">&times;</a>
         <a href="#">Ana Sayfa</a>
-        <a href="document/">Manifesto</a>
-        <a href="https://devs.artado.xyz/">Geliştiriciler</a>
-        <a href="hakkimizda/">Hakkımızda</a>
-        <a href="iletisim/">İletişim</a>
+        <a href="#">Manifesto</a>
+        <a href="#">Geliştiriciler</a>
+        <a href="#">Hakkımızda</a>
+        <a href="#">İletişim</a>
     </div>
 
     <main>
-        <section class="content">
-            <div class="logo-large"><img src="/assest/img/artado.png" class="feature-image"></div>
-            
+        <div class="content">
+            <div class="logo-large"><img src="/assest/img/artado.png" class="feature-image"></div>            <h1>Artado Manifestosu</h1>
+            <p>Burada listelenenlerin tamamı Artado felsefesiyle inşa edilmiştir. Tutarlı ve sadedir. Dolayısıyla özgür yazılımdırlar, dostane topluluğun bir parçasıdırlar.</p>
 
-            <h1>Artado Manifestosu</h1>
-            <p>
-                 Burada listelenenlerin tamamı Artado felsefesiyle inşa edilmiştir. Tutarlı ve sadedir. Dolayısıyla özgür yazılımdırlar, dostane topluluğun bir parçasıdırlar.
-            </p>
-            <div class="dropdown">
-                <h2>Pages</h2>
-                <span class="dropdown-icon">▼</span>
+            <!-- Pages dropdown -->
+            <div class="dropdown-container">
+                <div class="dropdown" id="pagesDropdown">
+                    <h2>Pages</h2>
+                    <span class="dropdown-icon">▼</span>
+                </div>
+                <div class="popup" id="pagesPopup">
+                    <div class="popup-content">
+                        <div class="card__container">
+                            <div href="#" class="card">
+                                <div class="card__image__container">
+                                    <img src="https://www.artado.xyz//images/artado-logo-colored.webp" alt="Artado Logosu. Dinazora benzemektedir." class="card__image">
+                                </div>
+                                <div class="card__details">
+                                    <span class="card__title">Artado Search</span>
+                                    <p class="card__description">
+                                        Açık kaynak kodlu, özelleştirilebilir ve mahremiyetinize önem veren arama motoru
+                                    </p>
+                                </div>
+                                <div class="card__button__container">
+                                    <a class="button button--suggested" href="https://artadosearch.com" role="button">Ziyaret et</a>
+                                    <a class="button" href="https://github.com/Artado-Project/artadosearch" role="button">Kaynak kodu</a>
+                                </div>
+                            </div>
+                            <div href="#" class="card">
+                                <div class="card__image__container">
+                                    <img src="https://www.artado.xyz/images/devs-logo-colored.webp" alt="Resim" class="card__image">
+                                </div>
+                                <div class="card__details">
+                                    <span class="card__title">Artado Developers</span>
+                                    <p class="card__description">
+                                        Uygulama, oyun, tema ve eklenti geliştiricilerinin buluşma noktası
+                                    </p>
+                                </div>
+                                <div class="card__button__container">
+                                    <a class="button button--suggested" href="https://devs.artado.xyz" role="button">Ziyaret et</a>
+                                    <a class="button" href="https://github.com/Artado-Project/devs" role="button">Kaynak kodu</a>
+                                </div>
+                            </div>
+                            <div href="#" class="card">
+                                <div class="card__image__container">
+                                    <img src="https://www.artado.xyz/images/celer-logo-colored.webp" alt="Resim" class="card__image">
+                                </div>
+                                <div class="card__details">
+                                    <span class="card__title">Celer</span>
+                                    <p class="card__description">
+                                        Sade ve mahremiyetinize saygı duyan tarayıcı
+                                    </p>
+                                </div>
+                                <div class="card__button__container">
+                                    <a class="button button--disabled" href="#" role="button">Geliştiriliyor</a>
+                                </div>
+                            </div>
+                            <div href="#" class="card">
+                                <div class="card__image__container">
+                                    <img src="https://www.artado.xyz/images/arus-logo-colored.webp" alt="Resim" class="card__image">
+                                </div>
+                                <div class="card__details">
+                                    <span class="card__title">Arus</span>
+                                    <p class="card__description">
+                                        LFS'i temel alan, sadeliğie odaklanmış işletim sistemi
+                                    </p>
+                                </div>
+                                <div class="card__button__container">
+                                    <a href="#" class="button button--disabled">Geliştiriliyor</a>
+                                </div>
+                            </div>
+                            <div href="#" class="card">
+                                <div class="card__image__container">
+                                    <img src="https://www.artado.xyz/images/question-mark.webp" alt="Resim" class="card__image">
+                                </div>
+                                <div class="card__details">
+                                    <span class="card__title">Aklınızda başka güzel bir fikir mi var?</span>
+                                    <p class="card__description">
+                                        Aramıza katılın!
+                                    </p>
+                                </div>
+                                <div class="card__button__container">
+                                    <a class="button button--suggested" href="mailto:arda@artadosearch.com" role="button">İletişime geç</a>
+                                </div>
+                                <div class="card__button__container">
+                                    <a class="button button--suggested" href="https://discord.com/invite/WXCsr8zTN6" role="button">Discord sunucumuza katıl</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="dropdown">
-                <h2>Socials</h2>
-                <span class="dropdown-icon">▼</span>
+
+            <!-- Socials dropdown -->
+            <div class="dropdown-container">
+                <div class="dropdown" id="socialsDropdown">
+                    <h2>Socials</h2>
+                    <span class="dropdown-icon">▼</span>
+                </div>
+                <div class="popup" id="socialsPopup">
+                    <div class="popup-content">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
