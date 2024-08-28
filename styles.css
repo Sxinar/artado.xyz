@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 16px;
+}
+
+nav ul li a.donate-btn {
+    padding: 5px 10px;
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+}
+
+nav ul li a:hover,
+nav ul li a.donate-btn:hover {
+    color: #fff;
+}
+
+main {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.support-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.support-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.support-section .highlight {
+    color: #59a8ff;
+}
+
+.support-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.donate-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.donate-options .option {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+}
+
+.donate-options .option img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.donate-options .option p {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* Popup menü stili */
+.popup-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #1a1a1a;
+    z-index: 1000;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+}
+
+.popup-menu.show {
+    display: block;
+    transform: translateX(0);
+}
+
+/* Mobil uyum için medya sorgusu */
+@media (max-width: 600px) {
+    nav ul {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
