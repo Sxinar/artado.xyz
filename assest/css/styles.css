@@ -54,10 +54,17 @@ p {
     margin-bottom: 30px;
 }
 
+.dropdown-section {
+    position: relative;
+}
+
+.dropdown-container {
+    margin-bottom: 10px;
+}
+
 .dropdown {
     background-color: #222222;
     padding: 15px;
-    margin-bottom: 10px;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -72,6 +79,42 @@ p {
 
 .dropdown-icon {
     color: #3498db;
+    transition: transform 0.3s ease;
+}
+
+.popup {
+    display: none;
+    background-color: #1a1a1a;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content {
+    padding: 10px 0;
+}
+
+.popup a {
+    color: #ecf0f1;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.popup a {
+    background-color: #34495e;
+    border-radius: 12px;
+}
+
+.show {
+    display: block;
+}
+
+#pagesContainer.active + #socialsContainer {
+    margin-top: 10px;
+    transition: margin-top 0.3s ease;
 }
 
 footer {
@@ -93,7 +136,7 @@ footer {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     top: 0;
     left: 0;
     background-color: #111;
@@ -121,4 +164,50 @@ footer {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+}
+
+.card__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 16px;
+    gap: 16px;
+    background: #1a1a1a;
+    border: 1px solid #E5E8EB;
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, .2);
+}
+
+.card__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.card__details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.card__button__container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card__image {
+    border-radius: 100%;
+    overflow: clip;
+}
+
+@media screen and (max-width: 900px) {
+    .card__container {
+        grid-template-columns: 1fr;
+    }
 }
