@@ -10,16 +10,4 @@ document.addEventListener('DOMContentLoaded', function() {
     closeButton.addEventListener('click', function() {
         sideMenu.style.width = '0';
     });
-
-    // Dropdown işlevselliği için
-    var dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(function(dropdown) {
-        dropdown.addEventListener('click', function() {
-            this.classList.toggle('active');
-            var icon = this.querySelector('.dropdown-icon');
-            icon.textContent = this.classList.contains('active') ? '▲' : '▼';
-        });
-    });
 });
-
-

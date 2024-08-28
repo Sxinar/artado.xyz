@@ -22,71 +22,52 @@ nav {
     border: none;
     color: #ffffff;
     font-size: 24px;
-    cursor: pointer;
 }
 
 main {
     padding: 20px;
 }
 
-.content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.logo-large {
-    font-size: 48px;
-    color: #3498db;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h1 {
+.support-section h1 {
     font-size: 24px;
-    color: #3498db;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #b0b0b0;
-    margin-bottom: 30px;
-}
-
-.dropdown {
-    background-color: #222222;
-    padding: 15px;
     margin-bottom: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
 }
 
-.dropdown h2 {
-    font-size: 18px;
-    margin: 0;
+.emoji {
+    font-style: normal;
 }
 
-.dropdown-icon {
-    color: #3498db;
+.support-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #b0b0b0;
 }
 
-footer {
-    background-color: #222222;
-    padding: 15px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-link {
-    color: #3498db;
+.donate-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    margin: 0 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.image-section {
+    margin-top: 20px;
+}
+
+.feature-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.image-caption {
+    background-color: #222222;
+    color: #3498db;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
 }
 
 .side-menu {
