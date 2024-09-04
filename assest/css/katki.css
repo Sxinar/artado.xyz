@@ -1,0 +1,82 @@
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.hero {
+    background-color: #add8e6;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin: 20px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.hero p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.contributors {
+    padding: 20px;
+    margin: 20px;
+    background-color: #2b2b2b;
+    border-radius: 12px;
+}
+
+.contributors h2 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.contributor img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #444;
+}
+
+footer {
+    background-color: #222222;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-link {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.ft-img{
+    width: 75px;
+    flex-direction: column;
+    border-radius: 120px;
+    gap: 16px;
+    background: #1a1a1a;
+    border: 1px solid #E5E8EB;
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, .2);
+}

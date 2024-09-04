@@ -245,3 +245,105 @@ footer {
     height: 26px;
     width: 26px
 }
+
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #ecf0f1;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    color: #f39c12;
+}
+
+.side-menu .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#menuButton {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffffff;
+    background: none;
+    border: none;
+}
+.ft-img{
+    width: 75px;
+    flex-direction: column;
+    border-radius: 120px;
+    gap: 16px;
+    background: #1a1a1a;
+    border: 1px solid #E5E8EB;
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, .2);
+}
+
+.contributors {
+    padding: 20px;
+    margin: 20px;
+    background-color: #2b2b2b;
+    border-radius: 8px;
+}
+
+.contributors h2 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.grid {
+
+    border-radius: 12px;
+    padding: 16px;
+    gap: 16px;
+    background: #1a1a1a;
+    border: 1px solid #E5E8EB;
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, .2);
+}
+
+.contributor {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    border-radius: 50%;
+    color: #b8b8b8;
+    width: 75px;
+}
+
+.forum-zi{
+    padding: 20px;
+    margin: 20px;
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    position: fixed;
+    
+}
+.buton{
+    color: #ecf0f1;
+    background-color: #1b4561;
+    border-radius: 8px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+    width: 70px;
+}
