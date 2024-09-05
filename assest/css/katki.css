@@ -1,13 +1,18 @@
 html, body {
     overflow-x: hidden;
     width: 100%;
-}
-body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #1a1a1a;
     color: #ffffff;
+    height: 100%; /* Sayfanın tam boyutunu kaplaması için */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Sayfa yüksekliğini tarayıcı görünümüne uydurur */
 }
 
 .hero {
@@ -57,13 +62,13 @@ body {
     border: 2px solid #444;
 }
 
+/* Footer ayarları */
 footer {
     background-color: #222222;
     padding: 15px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    margin-top: auto; /* İçerik kısa olsa bile footer en altta kalır */
 }
 
 .footer-link {
@@ -71,7 +76,8 @@ footer {
     text-decoration: none;
     margin: 0 10px;
 }
-.ft-img{
+
+.ft-img {
     width: 75px;
     flex-direction: column;
     border-radius: 120px;
