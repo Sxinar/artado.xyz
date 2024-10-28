@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celer - Başlangıç Ekranı</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .dark { background-color: #1a202c; color: #f7fafc; }
+    #app { transition: background-color 0.3s, color 0.3s; }
+    .dark input, .dark select, .dark button { background-color: #2d3748; color: #f7fafc; }
+    .dark label, .dark h1, .dark h2 { color: #e2e8f0; } /* Metinleri daha açık hale getirme */
+  </style>
+</head>
+<body id="app" class="bg-gray-100 min-h-screen flex flex-col items-center justify-center transition-colors duration-300">
+  
+  <!-- Ayarlar Butonu -->
+  <button onclick="toggleSettings()" class="absolute top-4 right-4 p-2 bg-blue-600 text-white rounded-full">⚙️</button>
+  
+  <!-- Ayarlar Pop-up -->
+  <div id="settingsPopup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg w-80">
+      <h2 class="text-xl mb-4 font-semibold dark:text-white">Ayarlar</h2>
+
+      <!-- Duvar Kağıdı Seçimi -->
+      <label class="block mb-2 dark:text-gray-200">Duvar Kağıdı:</label>
+      <input type="file" id="wallpaperInput" accept="image/*" onchange="setWallpaper()">
+
+      <!-- Arka Plan Renk Seçimi -->
+      <label class="block mt-4 mb-2 dark:text-gray-200">Arka Plan Rengi:</label>
+      <input type="color" id="backgroundColorPicker" onchange="setBackgroundColor()">
+
+      <!-- Karanlık Mod Aç/Kapat -->
+      <label class="block mt-4 mb-2 dark:text-gray-200">Karanlık Mod:</label>
+      <button onclick="toggleDarkMode()" class="w-full p-2 bg-gray-200 dark:bg-gray-600 rounded-lg">Karanlık Modu Aç/Kapat</button>
+
+      <!-- Yazı Tipi Seçimi -->
+      <label class="block mt-4 mb-2 dark:text-gray-200">Yazı Tipi:</label>
+      <select id="fontPicker" onchange="setFont()" class="w-full p-2 rounded-lg">
+        <option value="sans-serif">Sans Serif</option>
+        <option value="serif">Serif</option>
+        <option value="monospace">Monospace</option>
+      </select>
+
+      <!-- Köşe Yumuşatma Ayarı -->
+      <label class="block mt-4 mb-2 dark:text-gray-200">Köşe Yumuşatma:</label>
+      <input type="range" id="radiusPicker" min="0" max="50" value="5" onchange="setBorderRadius()" class="w-full">
+
+      <!-- Kısayollar Yönetimi -->
+      <label class="block mt-4 mb-2 dark:text-gray-200">Kısayollar:</label>
+      <button onclick="addShortcut()" class="w-full mb-2 p-2 bg-gray-200 dark:bg-gray-600 rounded-lg">Yeni Kısayol Ekle</button>
+
+      <button onclick="toggleSettings()" class="mt-4 w-full p-2 bg-blue-600 text-white rounded-lg">Kapat</button>
+    </div>
+  </div>
+
+  <!-- Celer Logo ve Başlık -->
+  <div class="text-center mb-6">
+    <img src="https://artado.xyz/assest/img/artado-project-img/celer.webp" alt="Celer Logo" class="mx-auto mb-4 w-20 h-20 rounded-full">
+    <h1 class="text-2xl font-bold dark:text-white">Celer Başlangıç Ekranı</h1>
+  </div>
+
+  <!-- Arama Kutusu -->
+  <div class="flex items-center w-2/3 md:w-1/2 lg:w-1/3 mt-4">
+    <input type="text" id="searchBox" placeholder="Arama yapın..." class="w-full p-3 border rounded-l-lg focus:outline-none dark:bg-gray-700 dark:text-white">
+    <button onclick="search()" id="searchButton" class="p-3 bg-blue-600 text-white rounded-r-lg">Ara</button>
+  </div>
+  
+  <!-- Kısayollar Bölümü -->
+  <div id="shortcuts" class="mt-8 grid grid-cols-3 gap-4"></div>
+  
+  <script>
+    function toggleSettings() {
+      const popup = document.getElementById('settingsPopup');
+      popup.classList.toggle('hidden');
+    }
+
+    function toggleDarkMode() {
+      document.getElementById('app').classList.toggle('dark');
+    }
+    
+    function setWallpaper() {
+      const input = document.getElementById('wallpaperInput');
+      const app = document.getElementById('app');
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          app.style.backgroundImage = `url(${e.target.result})`;
+          app.style.backgroundSize = 'cover';
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    function setBackgroundColor() {
+      const colorPicker = document.getElementById('backgroundColorPicker');
+      const app = document.getElementById('app');
+      app.style.backgroundColor = colorPicker.value;
+    }
+
+    function search() {
+      const query = document.getElementById('searchBox').value;
+      if (query) {
+        const url = `https://www.artadosearch.com/search?i=${encodeURIComponent(query)}`;
+        window.open(url, '_blank');
+      }
+    }
+
+    function setFont() {
+      const fontPicker = document.getElementById('fontPicker').value;
+      document.body.style.fontFamily = fontPicker;
+    }
+
+    function setBorderRadius() {
+      const radius = document.getElementById('radiusPicker').value + 'px';
+      document.getElementById('searchBox').style.borderRadius = radius;
+      document.getElementById('searchButton').style.borderRadius = radius;
+      document.querySelectorAll('.shortcut').forEach(el => el.style.borderRadius = radius);
+    }
+
+    function addShortcut() {
+      const shortcutsContainer = document.getElementById('shortcuts');
+      const url = prompt('Kısayol URL\'ini girin:');
+      const name = prompt('Kısayol Adı:');
+      if (url && name) {
+        const newShortcut = document.createElement('a');
+        newShortcut.href = url;
+        newShortcut.target = '_blank';
+        newShortcut.classList.add('shortcut', 'flex', 'flex-col', 'items-center', 'p-3', 'bg-blue-500', 'text-white', 'rounded-lg', 'hover:bg-blue-600', 'dark:bg-gray-700', 'dark:hover:bg-gray-600');
+        
+        const favicon = document.createElement('img');
+        favicon.src = `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}`;
+        favicon.alt = `${name} favicon`;
+        favicon.classList.add('w-8', 'h-8', 'mb-2', 'rounded-full');
+        
+        const shortcutName = document.createElement('span');
+        shortcutName.textContent = name;
+        
+        newShortcut.appendChild(favicon);
+        newShortcut.appendChild(shortcutName);
+        shortcutsContainer.appendChild(newShortcut);
+      }
+    }
+  </script>
+</body>
+</html>
